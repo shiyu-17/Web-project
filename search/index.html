@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Google Search</title>
+    <!-- 居中 -->
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .header {
+            text-align: right;
+            padding: 10px;
+        }
+        
+        .header a {
+            margin-left: 10px;
+        }
+    
+        .search-container {
+            margin-top: 100px;
+        }
+    
+        .search-input {
+            border-radius: 20px;
+            padding: 10px;
+            width: 400px;
+        }
+    
+        .search-button {
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function feelingLucky(event) {
+            event.preventDefault(); // 阻止表单提交
+
+            const searchQuery = document.querySelector('.search-input').value;
+            const feelingLuckyUrl = `https://www.google.com/search?btnI=1&q=${searchQuery}`;
+
+            window.location.href = feelingLuckyUrl; // 跳转到I'm Feeling Lucky结果页面
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="images.html">Image Search</a> |
+        <a href="advanced.html">Advanced Search</a>
+    </div>
+    <h1 style="margin-bottom: 0;">Google Search</h1>
+    <div class="search-container">
+        <form action="https://google.com/search">
+            <input type="text" name="q" class="search-input" placeholder="Enter your search query">
+            <br>
+            <input type="submit" value="Google Search" class="search-button">
+            <input type="button" value="手气不错" class="search-button" onclick="feelingLucky(event)">
+        </form>
+    </div>
+</body>
+
+</html>
